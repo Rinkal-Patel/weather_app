@@ -62,10 +62,13 @@ class _MyHomePageState extends State<MyHomePage> {
         // the App.build method, and use it to set our appbar title.
         title: Text(widget.title),
       ),
-      body: Center(
-        // Center is a layout widget. It takes a single child and positions it
-        // in the middle of the parent.
-        child: Dashboard()
+      body: Container(
+        color: Colors.black12,
+        child: Center(
+          // Center is a layout widget. It takes a single child and positions it
+          // in the middle of the parent.
+          child: Dashboard()
+        ),
       ),
       // This trailing comma makes auto-formatting nicer for build methods.
     );

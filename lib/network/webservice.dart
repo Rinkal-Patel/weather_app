@@ -7,7 +7,6 @@ import 'package:weather_app/utils/const.dart';
 class Webservice {
   Future<List<WeatherInfo>> getWeatherInfo() async {
     var client = http.Client();
-    try {
       Uri uri = Uri.parse("${API_BASE_URL}/${LOCATION_ID}");
       final response = await client.get(uri,headers: {'Content-Type': 'application/json'});
       final jsonResponse = response.body;
@@ -15,28 +14,21 @@ class Webservice {
       final weatherInfoJsonArray = jsonMap["consolidated_weather"];
       List<WeatherInfo> weatherInfo = List<WeatherInfo>.from(
           weatherInfoJsonArray.map((model) => WeatherInfo.fromMap(model)));
-      return weatherInfo;
-    } catch (e) {
-      return [];
-    } finally {
       client.close();
-    }
+      return weatherInfo;
+
   }
 
   Future<List<WeatherInfo>> getWeatherDetailInfo(String date) async {
     var client = http.Client();
-    try {
       final response =
           await client.get(Uri.parse("${API_BASE_URL}/${LOCATION_ID}/${date}"));
       final jsonResponse = response.body;
       final weatherInfoJsonArray = jsonDecode(jsonResponse);
       List<WeatherInfo> weatherInfo = List<WeatherInfo>.from(
           weatherInfoJsonArray.map((model) => WeatherInfo.fromMap(model)));
-      return weatherInfo;
-    } catch (e) {
-      return [];
-    } finally {
       client.close();
-    }
+      return weatherInfo;
+
   }
 }

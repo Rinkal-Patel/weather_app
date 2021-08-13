@@ -1,16 +1,22 @@
-# weather_app
+# State Pattern Challenge - Flutter
 
-A new Weather application.
+## Objective
+*Retrieve the current weather data from the provided API for Sydney, New South Wales, Australia
 
-## Getting Started
+*Display the forecast on the home landing screen with a detailed list of the temperatures returned from the API.
 
-This project is a starting point for a Flutter application.
+## Screens Required:
+* Home Screen:
+1. Horizontal image carousel displaying simple tile with the weather image and name (i.e. weather_state_name field)
+2. Users can tap on the weather tile to launch the details screen
 
-A few resources to get you started if this is your first Flutter project:
+* Details Screen:
+1. Fetch the details of the weather day
+2. Simple list view showing the weather image and name, and the temperature (i.e. the_temp field)
+ 
+* The weather abbreviation images (for the tiles) can be referenced at https://www.metaweather.com/api/
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+## API end-point examples:
+Weather forecast: https://www.metaweather.com/api/location/1105779/
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Weather day: https://www.metaweather.com/api/location/1105779/2021/07/23/

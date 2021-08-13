@@ -43,36 +43,34 @@ class _DetailState extends State<Detail> {
                       //height: 157,
                       child: ListView.builder(
                         itemCount: state.weatherInfo.length,
+                        padding: EdgeInsets.all(8),
                         itemBuilder: (context, index) {
-                          return TextButton(
-                            onPressed: () {
-                              Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) => Detail(
-                                        state.weatherInfo[index].applicableDate)),
-                              );
-                            },
-                            child: Container(
-                              child: Card(
-                                child: Container(
-                                  padding: EdgeInsets.symmetric(
-                                      horizontal: 10, vertical: 5),
-                                  child: Column(
-                                    children: [
-                                      Text(
-                                        state.weatherInfo[index].weatherStateName,
-                                        style: TextStyle(
-                                            fontSize: 20,
-                                            fontWeight: FontWeight.bold,
-                                            letterSpacing: 1),
-                                      ),
-                                      Image.network(
-                                        "https://www.metaweather.com/static/img/weather/png/${state.weatherInfo[index].weatherStateAbbr}.png",
-                                        height: 100,
-                                      )
-                                    ],
-                                  ),
+                          return Container(
+                            child: Card(
+                              child: Container(
+                                padding: EdgeInsets.symmetric(
+                                    horizontal: 10, vertical: 5),
+                                child: Column(
+                                  children: [
+                                    Text(
+                                      state.weatherInfo[index].weatherStateName,
+                                      style: TextStyle(
+                                          fontSize: 20,
+                                          fontStyle: FontStyle.italic,
+                                          fontWeight: FontWeight.bold,
+                                          letterSpacing: 1),
+                                    ),
+                                    Text(
+                                      "Temperature:" + "${state.weatherInfo[index].theTemp.toStringAsFixed(2)}",
+                                      style: TextStyle(
+                                          fontSize: 18,
+                                          letterSpacing: 1),
+                                    ),
+                                    Image.network(
+                                      "https://www.metaweather.com/static/img/weather/png/${state.weatherInfo[index].weatherStateAbbr}.png",
+                                      height: 100,
+                                    )
+                                  ],
                                 ),
                               ),
                             ),

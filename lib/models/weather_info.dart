@@ -12,12 +12,11 @@ class WeatherInfo{
   double windDirection;
   double airPressure;
   int humidity;
-  double visibility;
   int predictability;
   WeatherInfo(this.id, this.weatherStateName, this.weatherStateAbbr,
   this.windDirectionCompass, this.created, this.applicableDate,
       this.minTemp, this.maxTemp, this.theTemp, this.windSpeed, this.windDirection,
-      this.airPressure, this.humidity, this.visibility, this.predictability);
+      this.airPressure, this.humidity, this.predictability);
   WeatherInfo.fromMap(Map<String, dynamic> json)
       : id = json["id"],
         weatherStateName = json["weather_state_name"],
@@ -32,7 +31,5 @@ class WeatherInfo{
         windDirection = json["wind_direction"],
         airPressure = json["air_pressure"],
         humidity = json["humidity"],
-        visibility = json["visibility"],
         predictability = json["predictability"];
-
 }

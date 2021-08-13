@@ -22,7 +22,7 @@ class Webservice {
   Future<List<WeatherInfo>> getWeatherDetailInfo(String date) async {
     var client = http.Client();
       final response =
-          await client.get(Uri.parse("${API_BASE_URL}/${LOCATION_ID}/${date}"));
+          await client.get(Uri.parse("${API_BASE_URL}/${LOCATION_ID}/${date}"), headers: {'Content-Type': 'application/json'});
       final jsonResponse = response.body;
       final weatherInfoJsonArray = jsonDecode(jsonResponse);
       List<WeatherInfo> weatherInfo = List<WeatherInfo>.from(

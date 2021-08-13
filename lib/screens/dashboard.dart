@@ -61,6 +61,7 @@ class _DashboardState extends State<Dashboard> {
                                   state.weatherInfo[index].weatherStateName,
                                   style: TextStyle(
                                       fontSize: 20,
+                                      fontStyle: FontStyle.italic,
                                       fontWeight: FontWeight.bold,
                                       letterSpacing: 1),
                                 ),

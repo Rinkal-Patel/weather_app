@@ -20,3 +20,7 @@
 Weather forecast: https://www.metaweather.com/api/location/1105779/
 
 Weather day: https://www.metaweather.com/api/location/1105779/2021/07/23/
+
+## Screenshots
+<img src="/screenshots/Capture.PNG" width="346" height="615" alt="Homescreen"/> 
+<img src="/screenshots/Capture1.PNG" width="346" height="615" alt="Detailscreen"/>
